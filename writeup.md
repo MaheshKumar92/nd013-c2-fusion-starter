@@ -25,8 +25,19 @@ Here is the RMSE plot.
 <img src="img/RMSE2.png"/>
 
 #### Association
+Here we have to associate objects to the measurements. We have multiple tracks and multiple measurements for those objects. 
+Deciding which measurement belongs to which object (track) is called association.
+
+To associate tracks to measurements we need to use a distance metric. As learned from the lessons we are using Mahalanobis distance.
+
+We use association matrix which is an N×M matrix that contains the Mahalanobis distances between each track and each measurement.
+MHD compares state position with the measurement while considering uncertainty by using inverse of residual covariance S.
+For association we used Simple Nearest Neighbor with MHD distance and gatting.
+Gatting is used to reduce the calculation because it removes unlikely association pairs.
+
+For this step initialization, MHD, gating and closest track and measurement tasks, I had already finished during lessons. So it was straight forward.
+
 After this task I was able to see multiple tracks and it worked very well without camera.
-For this step initialization, MHD, gating and closest track and measurement tasks I had already finished during lessons. So it was straight forward.
 Here is the RMSE plot.
 <img src="img/RMSE3.png"/>
 
